@@ -1,11 +1,10 @@
-function Paddle() {
+function Paddle(color) {
   Entity.call(this)
 
   this.width = 20
   this.height = 100
-
+  this.fillStyle = color
   this.y = game.height / 2 - this.height / 2
-
   this.score = 0
 }
 
@@ -22,7 +21,7 @@ Paddle.prototype.update = function() {
 
 
 function Player() {
-  Paddle.call(this)
+  Paddle.call(this, "green")
   
   this.x = 20
 
@@ -46,10 +45,10 @@ Player.prototype.update = function() {
 
 
 function Bot() {
-  Paddle.call(this)
+  Paddle.call(this, "red")
 
   this.x = game.width - this.width - 20
-
+  this.color = "red"
   this.speed = 5
 }
 
